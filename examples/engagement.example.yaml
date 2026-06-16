@@ -1,0 +1,25 @@
+engagement:
+  name: Example Assessment
+  mode: vulnerability_assessment
+  authorization:
+    statement: Authorized testing only.
+    contact: security@example.com
+
+scope:
+  include:
+    domains:
+      - example.com
+    cidrs: []
+    urls: []
+  exclude:
+    domains: []
+    cidrs: []
+    urls: []
+
+rules:
+  active_scanning: true
+  exploit_validation: false
+  destructive_tests: false
+  credential_attacks: false
+  social_engineering: false
+
