@@ -1,13 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/pir8mara/clowder/schemas/engagement.schema.json",
   "title": "Clowder Engagement",
   "type": "object",
   "required": ["engagement", "scope", "rules"],
   "properties": {
-    "engagement": {
-      "type": "object",
-      "required": ["name", "mode"],
-      "properties": {
-        "name": {"type": "string"},
-        "
+    "engagement": {"type": "object"},
+    "scope": {"type": "object"},
+    "rules": {"type": "object"}
+  }
+}
