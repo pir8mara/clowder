@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "can-bus-workbench"
+version = "0.1.0"
+description = "Local-first CAN/CAN FD capture, decoding, and reverse-engineering starter kit."
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Tamara-Jade Walters" }]
+dependencies = [
+  "python-can>=4.4",
+  "cantools>=39.4",
+  "rich>=13.7",
+  "PyYAML>=6.0"
+]
+
+[project.scripts]
+canwb = "can_workbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

@@ -1,0 +1,5 @@
+python-can>=4.4
+cantools>=39.4
+rich>=13.7
+PyYAML>=6.0
+pytest>=8.0
