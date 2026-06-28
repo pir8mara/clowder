@@ -29,6 +29,12 @@ Each phase feeds structured evidence and context into the next phase. The operat
 - Repeatable engagement state
 - Detection-aware offensive testing
 
+## License and contributions
+
+Clowder is licensed under AGPL-3.0-only.
+
+Contributions use the Developer Certificate of Origin. No Contributor License Agreement is required, and no copyright assignment is required.
+
 ## Initial docs
 
 - [Vision](docs/00-vision.md)
