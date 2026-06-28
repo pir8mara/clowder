@@ -1,0 +1,14 @@
+Clowder is licensed under the GNU Affero General Public License v3.0 only.
+
+SPDX-License-Identifier: AGPL-3.0-only
+
+This repository uses AGPL-3.0-only to ensure that modified network-hosted versions remain open to their users.
+
+The full license text is available from the Free Software Foundation:
+https://www.gnu.org/licenses/agpl-3.0.txt
+
+Project policy:
+- Contributions are accepted under AGPL-3.0-only.
+- No Contributor License Agreement is required.
+- No copyright assignment is required.
+- Contributors retain copyright to their work while licensing contributions under AGPL-3.0-only.
