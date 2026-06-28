@@ -4,8 +4,59 @@
   "type": "object",
   "required": ["engagement", "scope", "rules"],
   "properties": {
-    "engagement": {"type": "object"},
-    "scope": {"type": "object"},
-    "rules": {"type": "object"}
+    "engagement": {
+      "type": "object",
+      "required": ["name", "phase_ceiling", "authorization"],
+      "properties": {
+        "name": {"type": "string"},
+        "client": {"type": "string"},
+        "phase_ceiling": {
+          "type": "string",
+          "enum": ["osint_recon", "deep_recon", "security_posture_assessment", "vulnerability_assessment", "red_team_simulation", "destructive_testing"]
+        },
+        "authorization": {
+          "type": "object",
+          "required": ["statement"],
+          "properties": {
+            "statement": {"type": "string"},
+            "contact": {"type": "string"},
+            "valid_from": {"type": "string"},
+            "valid_until": {"type": "string"}
+          }
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["include"],
+      "properties": {
+        "include": {"$ref": "#/$defs/target_set"},
+        "exclude": {"$ref": "#/$defs/target_set"},
+        "allow_public_targets": {"type": "boolean"}
+      }
+    },
+    "rules": {
+      "type": "object",
+      "properties": {
+        "active_scanning": {"type": "boolean"},
+        "exploit_validation": {"type": "boolean"},
+        "destructive_tests": {"type": "boolean"},
+        "credential_attacks": {"type": "boolean"},
+        "social_engineering": {"type": "boolean"},
+        "persistence": {"type": "boolean"},
+        "evasion": {"type": "boolean"},
+        "post_assessment_control": {"type": "boolean"}
+      }
+    }
+  },
+  "$defs": {
+    "target_set": {
+      "type": "object",
+      "properties": {
+        "domains": {"type": "array", "items": {"type": "string"}},
+        "cidrs": {"type": "array", "items": {"type": "string"}},
+        "urls": {"type": "array", "items": {"type": "string"}}
+      }
+    }
   }
 }
