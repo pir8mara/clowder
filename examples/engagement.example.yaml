@@ -1,9 +1,12 @@
 engagement:
   name: Example Assessment
-  mode: vulnerability_assessment
+  client: Example Client
+  phase_ceiling: vulnerability_assessment
   authorization:
     statement: Authorized testing only.
     contact: security@example.com
+    valid_from: "2026-01-01"
+    valid_until: "2026-01-31"
 
 scope:
   include:
@@ -15,6 +18,7 @@ scope:
     domains: []
     cidrs: []
     urls: []
+  allow_public_targets: true
 
 rules:
   active_scanning: true
@@ -22,4 +26,32 @@ rules:
   destructive_tests: false
   credential_attacks: false
   social_engineering: false
+  persistence: false
+  evasion: false
+  post_assessment_control: false
 
+limits:
+  rate_limit: moderate
+  max_concurrency: 5
+  testing_windows: []
+
+approval_required_for:
+  - phase_escalation_red_team
+  - destructive_testing
+  - credential_testing
+  - scope_expansion
+  - high_traffic_testing
+
+evidence:
+  retain_raw_tool_output: true
+  retain_screenshots: true
+  redact_secrets_in_reports: true
+
+reporting:
+  formats:
+    - markdown
+    - json
+  include:
+    - executive_summary
+    - technical_findings
+    - evidence_appendix
